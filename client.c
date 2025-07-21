@@ -1,3 +1,19 @@
+/*
+Questions to answer at top of client.c:
+
+1. What is the address of the server it is trying to connect to (IP address and port number)?
+   - 127.0.0.1:8000
+
+2. Is it UDP or TCP? How do you know?
+   - TCP as it uses SOCK_STREAM.
+
+3. The client is going to send some data to the server. Where does it get this data from? How can you tell in the code?
+   - stdin is used to read through read(STDIN_FILENO, ...).
+
+4. How does the client program end? How can you tell that in the code?
+   - The client ends when read() returns 0, which happens when the user sends EOF.
+*/
+
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>
